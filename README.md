@@ -1,7 +1,3 @@
-Természetesen! Itt a kiegészített `README.md`, amely pontosabban leírja, hogy **hogyan kell értelmezni és végrehajtani a `script.json` forgatókönyvet**, milyen **OOP elveket** gyakorolnak közben, valamint milyen **struktúrákat** és **típusokat** érdemes bevezetni – pl. `enum`-okat is.
-
----
-
 # 🐺 Game of Thrones – OOP Projekt TypeScript-ben
 
 Ez a projekt célja az objektum-orientált programozás (OOP) és a valós szimulációs logika elsajátítása a Trónok harca világán keresztül.
@@ -49,7 +45,7 @@ npm run start
 
 ### 🎯 Általános cél
 
-Valósítsd meg a scriptben definiált forgatókönyvet OOP alapokon, karakterekkel, házakkal, szövetségekkel és csatákkal. A karakterek halála után a „Mások” seregét erősítik, a túlélők pedig végső csatába indulnak a világ megmentéséért.
+Valósítsd meg a `script.json` fájlban definiált forgatókönyvet OOP alapokon, karakterekkel, házakkal, szövetségekkel és csatákkal. A karakterek halála után a „Mások” seregét erősítik, a túlélők pedig végső csatába indulnak a világ megmentéséért.
 
 ---
 
@@ -77,14 +73,12 @@ Valósítsd meg a scriptben definiált forgatókönyvet OOP alapokon, karakterek
 - Értsd meg a `script.json` szerkezetét.
 - Implementálj egy `ScenarioEngine` osztályt, amely:
 
-  - beolvassa a fájlt (használj `fs.readFileSync`)
+  - beolvassa a fájlt (`fs.readFileSync`)
   - iterál a `phases` tömbön
-  - hajtja végre az `instructions` és `battle` objektumokat
+  - végrehajtja az `instructions` és `battle` objektumokat
 
-- Minden `action` típushoz hozz létre saját kezelőt (pl. `formAlliance`, `changeAllegiance`, `spawnBoss`, `awardTitle`, stb.)
-- Használj `enum`-ot az `ActionType` és `BattleType` kezelésére.
-
-📁 Ebben a fázisban a cél a dinamikus állapotkezelés és az adatvezérelt működés kialakítása.
+- Hozz létre minden `action` típushoz külön kezelőt (pl. `formAlliance`, `changeAllegiance`, `spawnBoss`, stb.)
+- Használj `enum`-okat az `ActionType`, `BattleType`, `CharacterType` stb. kezelésére.
 
 ---
 
@@ -95,11 +89,8 @@ Valósítsd meg a scriptben definiált forgatókönyvet OOP alapokon, karakterek
 ### Feladatok:
 
 - Vezesd le a ház–ház vagy szövetség–szövetség harcokat.
-- Alakíts ki egy csatalogikát, amely többszereplős harcokat kezel (`BattleManager` javasolt).
-- Halott karakterek automatikusan „Wight”-ként térnek vissza (öröklés és típusváltás).
-- Implementálj csata típusokat külön enum-ként (`BattleType`), és ezekhez külön logikát.
-
-📁 Ebben a fázisban gyakorolhatók a következők: öröklés, polimorfizmus, típuskezelés.
+- Alakíts ki egy csatalogikát (`BattleManager`), amely többszereplős harcokat kezel.
+- Gondoskodj róla, hogy a halott karakterek automatikusan „Wight”-ként térjenek vissza.
 
 ---
 
@@ -111,10 +102,7 @@ Valósítsd meg a scriptben definiált forgatókönyvet OOP alapokon, karakterek
 
 - Töltsd fel a „White Walkers” szövetséget halott karakterekkel.
 - Készíts `Hero` státuszt és különleges képességeket (pl. `summonDragon`, `resurrectAll`).
-- Készíts buff/logika kezelőt szövetségek számára (`morale`, `areaDamageChance`, stb.)
-- Alakítsd ki a `bossFight` típusú csatákat, külön szabályokkal.
-
-📁 Ez a fázis erősen komplex: állapotátmenetek, különleges szabályrendszer és szövetségi képességek kezelését igényli.
+- Vezesd be a `bossFight` típusú csatákat egyedi szabályokkal.
 
 ---
 
@@ -124,34 +112,31 @@ Valósítsd meg a scriptben definiált forgatókönyvet OOP alapokon, karakterek
 
 ### Feladatok:
 
-- Feltételalapú díjazás (`condition` értékelése karakterekre).
-- Végső állapot mentése JSON-be (`saveFinalState`).
-- Statisztikák exportálása CSV-be (`exportStatistics`).
-- Narratív lezárás (`log`, `declareVictory`, `mourn`, `celebrate`).
-
-📁 Ebben a fázisban a fájlműveletek, tömbkezelés, export és egyszerű fájlszerializáció gyakorolható.
+- Feltételalapú díjazás karakterekre (`condition` értékelése).
+- Végső állapot mentése (`saveFinalState`).
+- Statisztika exportálása (`exportStatistics`).
+- Narratív lezárás (`log`, `mourn`, `declareVictory`).
 
 ---
 
 ## 🛡️ EXTRA KIHÍVÁSOK
 
-- Írj `ConditionEvaluator` osztályt, amely képes egyéni string feltételeket kiértékelni karakterekre.
-- Készíts CLI felületet a `ScenarioEngine`-hez.
-- Időzített animált szimuláció (`setTimeout`, körökben futtatva).
-- Készíts `EventLog` osztályt, amely minden eseményt naplóz.
-- Építs UI-t, amely real-time mutatja a csataállapotot.
+- Készíts `ConditionEvaluator` osztályt komplex logikai kifejezésekhez.
+- Írj `EventLogger`-t, amely naplózza az összes eseményt.
+- CLI vagy webes felület a játékfázisok vezérlésére.
+- Cheat mód, karakter szerkesztés, vagy különálló „editor” szkript létrehozása.
 
 ---
 
 ## 🧠 OOP ELVEK, AMIKET GYAKOROLSZ
 
-| Elv               | Gyakorlati példa                                            |
-| ----------------- | ----------------------------------------------------------- |
-| **Encapsulation** | `Character`, `House`, `Alliance` belső állapotai            |
-| **Inheritance**   | `Warrior`, `Mage`, `Wight` öröklik a `Character`-t          |
-| **Polymorphism**  | `attack()` metódus típustól függő viselkedése               |
-| **Abstraction**   | `ScenarioEngine`, `BattleManager` interfészként használva   |
-| **Enum kezelés**  | `ActionType`, `BattleType`, `CharacterType`, `AllianceName` |
+| OOP elv           | Gyakorlati példa                                                       |
+| ----------------- | ---------------------------------------------------------------------- |
+| **Encapsulation** | `Character`, `House`, `Alliance` belső állapotainak védelme            |
+| **Inheritance**   | `Warrior`, `Mage`, `Wight` öröklik az absztrakt `Character` osztályt   |
+| **Polymorphism**  | `attack()` metódus eltérően viselkedik típustól függően                |
+| **Abstraction**   | `Character` mint absztrakt osztály, amely előírja az alap viselkedést  |
+| **Enum kezelés**  | `ActionType`, `BattleType`, `CharacterType` stb. típusbiztos logikához |
 
 ---
 
@@ -171,6 +156,8 @@ export enum ActionType {
   PromoteToHero = 'promoteToHero',
   AwardTitle = 'awardTitle',
   SpawnBoss = 'spawnBoss',
+  Log = 'log',
+  SaveFinalState = 'saveFinalState',
   ...
 }
 
@@ -180,7 +167,3 @@ export enum BattleType {
   BossFight = 'bossFight'
 }
 ```
-
----
-
-🧊🔥 **Készülj fel a télre, a végső háborúra – és az OOP gondolkodás elsajátítására.**
