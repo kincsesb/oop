@@ -1,0 +1,462 @@
+[
+  {
+    "name": "Jon Snow",
+    "type": "warrior",
+    "house": "Stark",
+    "health": 120,
+    "attack": 25
+  },
+  {
+    "name": "Arya Stark",
+    "type": "archer",
+    "house": "Stark",
+    "health": 90,
+    "attack": 20
+  },
+  {
+    "name": "Sansa Stark",
+    "type": "mage",
+    "house": "Stark",
+    "health": 85,
+    "attack": 15
+  },
+  {
+    "name": "Bran Stark",
+    "type": "mage",
+    "house": "Stark",
+    "health": 80,
+    "attack": 18
+  },
+  {
+    "name": "Robb Stark",
+    "type": "warrior",
+    "house": "Stark",
+    "health": 110,
+    "attack": 23
+  },
+  {
+    "name": "Benjen Stark",
+    "type": "warrior",
+    "house": "Stark",
+    "health": 105,
+    "attack": 20
+  },
+  {
+    "name": "Rickon Stark",
+    "type": "archer",
+    "house": "Stark",
+    "health": 75,
+    "attack": 17
+  },
+  {
+    "name": "Ned Stark",
+    "type": "warrior",
+    "house": "Stark",
+    "health": 130,
+    "attack": 28
+  },
+
+  {
+    "name": "Daenerys Targaryen",
+    "type": "mage",
+    "house": "Targaryen",
+    "health": 100,
+    "attack": 30
+  },
+  {
+    "name": "Jorah Mormont",
+    "type": "warrior",
+    "house": "Targaryen",
+    "health": 110,
+    "attack": 22
+  },
+  {
+    "name": "Grey Worm",
+    "type": "warrior",
+    "house": "Targaryen",
+    "health": 115,
+    "attack": 24
+  },
+  {
+    "name": "Missandei",
+    "type": "mage",
+    "house": "Targaryen",
+    "health": 75,
+    "attack": 16
+  },
+  {
+    "name": "Daario Naharis",
+    "type": "archer",
+    "house": "Targaryen",
+    "health": 95,
+    "attack": 21
+  },
+  {
+    "name": "Viserys Targaryen",
+    "type": "mage",
+    "house": "Targaryen",
+    "health": 80,
+    "attack": 17
+  },
+
+  {
+    "name": "Cersei Lannister",
+    "type": "mage",
+    "house": "Lannister",
+    "health": 90,
+    "attack": 19
+  },
+  {
+    "name": "Jaime Lannister",
+    "type": "warrior",
+    "house": "Lannister",
+    "health": 115,
+    "attack": 24
+  },
+  {
+    "name": "Tyrion Lannister",
+    "type": "mage",
+    "house": "Lannister",
+    "health": 80,
+    "attack": 15
+  },
+  {
+    "name": "Ser Gregor Clegane",
+    "type": "warrior",
+    "house": "Lannister",
+    "health": 140,
+    "attack": 40
+  },
+  {
+    "name": "Qyburn",
+    "type": "mage",
+    "house": "Lannister",
+    "health": 70,
+    "attack": 17
+  },
+  {
+    "name": "Kevan Lannister",
+    "type": "warrior",
+    "house": "Lannister",
+    "health": 100,
+    "attack": 21
+  },
+  {
+    "name": "Lancel Lannister",
+    "type": "archer",
+    "house": "Lannister",
+    "health": 85,
+    "attack": 18
+  },
+
+  {
+    "name": "Theon Greyjoy",
+    "type": "archer",
+    "house": "Greyjoy",
+    "health": 85,
+    "attack": 18
+  },
+  {
+    "name": "Yara Greyjoy",
+    "type": "warrior",
+    "house": "Greyjoy",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Euron Greyjoy",
+    "type": "mage",
+    "house": "Greyjoy",
+    "health": 95,
+    "attack": 20
+  },
+
+  {
+    "name": "Stannis Baratheon",
+    "type": "mage",
+    "house": "Baratheon",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Renly Baratheon",
+    "type": "warrior",
+    "house": "Baratheon",
+    "health": 110,
+    "attack": 23
+  },
+  {
+    "name": "Robert Baratheon",
+    "type": "warrior",
+    "house": "Baratheon",
+    "health": 135,
+    "attack": 27
+  },
+  {
+    "name": "Gendry",
+    "type": "archer",
+    "house": "Baratheon",
+    "health": 95,
+    "attack": 20
+  },
+
+  {
+    "name": "Margaery Tyrell",
+    "type": "mage",
+    "house": "Tyrell",
+    "health": 85,
+    "attack": 15
+  },
+  {
+    "name": "Loras Tyrell",
+    "type": "warrior",
+    "house": "Tyrell",
+    "health": 105,
+    "attack": 22
+  },
+
+  {
+    "name": "Olenna Tyrell",
+    "type": "mage",
+    "house": "Tyrell",
+    "health": 70,
+    "attack": 14
+  },
+  {
+    "name": "Samwell Tarly",
+    "type": "mage",
+    "house": "Night's Watch",
+    "health": 85,
+    "attack": 13
+  },
+  {
+    "name": "Dolorous Edd",
+    "type": "warrior",
+    "house": "Night's Watch",
+    "health": 95,
+    "attack": 20
+  },
+  {
+    "name": "Alliser Thorne",
+    "type": "warrior",
+    "house": "Night's Watch",
+    "health": 100,
+    "attack": 21
+  },
+  {
+    "name": "Jeor Mormont",
+    "type": "warrior",
+    "house": "Night's Watch",
+    "health": 115,
+    "attack": 23
+  },
+
+  {
+    "name": "Brienne of Tarth",
+    "type": "warrior",
+    "house": "Tarth",
+    "health": 120,
+    "attack": 25
+  },
+  {
+    "name": "Podrick Payne",
+    "type": "archer",
+    "house": "Tarth",
+    "health": 90,
+    "attack": 17
+  },
+
+  {
+    "name": "Sandor Clegane",
+    "type": "warrior",
+    "house": "Clegane",
+    "health": 135,
+    "attack": 40
+  },
+  {
+    "name": "Beric Dondarrion",
+    "type": "warrior",
+    "house": "Dondarrion",
+    "health": 105,
+    "attack": 23
+  },
+
+  {
+    "name": "Tormund Giantsbane",
+    "type": "warrior",
+    "house": "Free Folk",
+    "health": 120,
+    "attack": 36
+  },
+  {
+    "name": "Ygritte",
+    "type": "archer",
+    "house": "Free Folk",
+    "health": 90,
+    "attack": 20
+  },
+  {
+    "name": "Mance Rayder",
+    "type": "mage",
+    "house": "Free Folk",
+    "health": 100,
+    "attack": 20
+  },
+  {
+    "name": "Craster",
+    "type": "warrior",
+    "house": "Free Folk",
+    "health": 95,
+    "attack": 18
+  },
+
+  {
+    "name": "Melisandre",
+    "type": "mage",
+    "house": "R'hllor",
+    "health": 90,
+    "attack": 25
+  },
+  {
+    "name": "Thoros of Myr",
+    "type": "mage",
+    "house": "R'hllor",
+    "health": 85,
+    "attack": 22
+  },
+
+  {
+    "name": "White Walker 1",
+    "type": "wight",
+    "house": "Others",
+    "health": 150,
+    "attack": 35
+  },
+  {
+    "name": "White Walker 2",
+    "type": "wight",
+    "house": "Others",
+    "health": 145,
+    "attack": 34
+  },
+  {
+    "name": "White Walker 3",
+    "type": "wight",
+    "house": "Others",
+    "health": 140,
+    "attack": 33
+  },
+  {
+    "name": "Wight Brute",
+    "type": "wight",
+    "house": "Others",
+    "health": 130,
+    "attack": 28
+  },
+  {
+    "name": "Undead Giant",
+    "type": "wight",
+    "house": "Others",
+    "health": 200,
+    "attack": 40
+  },
+  {
+    "name": "Wight Archer 1",
+    "type": "wight",
+    "house": "Others",
+    "health": 90,
+    "attack": 20
+  },
+  {
+    "name": "Wight Archer 2",
+    "type": "wight",
+    "house": "Others",
+    "health": 90,
+    "attack": 20
+  },
+  {
+    "name": "Wight Mage 1",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 25
+  },
+  {
+    "name": "Wight Mage 2",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 25
+  },
+
+  {
+    "name": "Unnamed Wight 1",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 2",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 3",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 4",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 5",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 6",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 7",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 8",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 9",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  },
+  {
+    "name": "Unnamed Wight 10",
+    "type": "wight",
+    "house": "Others",
+    "health": 100,
+    "attack": 22
+  }
+]

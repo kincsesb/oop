@@ -1,0 +1,280 @@
+{
+  "phases": [
+    {
+      "name": "Phase 1 – Introduction & Setup",
+      "instructions": [
+        {
+          "action": "log",
+          "message": "Winter is here. The realm is divided. Alliances must form."
+        },
+        {
+          "action": "formAlliance",
+          "name": "North Alliance",
+          "houses": [
+            "Stark",
+            "Targaryen",
+            "Tarth",
+            "Night's Watch"
+          ]
+        },
+        {
+          "action": "formAlliance",
+          "name": "Crown Alliance",
+          "houses": ["Lannister", "Baratheon", "Tyrell"]
+        },
+        {
+          "action": "formAlliance",
+          "name": "Sea Raiders",
+          "houses": ["Greyjoy", "Free Folk"]
+        },
+        {
+          "action": "formAlliance",
+          "name": "Fire Faith",
+          "houses": ["R'hllor"]
+        },
+        {
+          "action": "log",
+          "message": "The old gods are silent. The flames whisper war."
+        }
+      ]
+    },
+
+    {
+      "name": "Phase 2 – House Negotiations",
+      "instructions": [
+        {
+          "action": "log",
+          "message": "The North calls to the flames. Melisandre must decide."
+        },
+        {
+          "action": "attemptMerge",
+          "from": "Fire Faith",
+          "to": "North Alliance",
+          "condition": "character.name == 'Melisandre' && character.health > 70",
+          "onSuccess": "merge",
+          "onFailure": "remainNeutral"
+        },
+        {
+          "action": "changeAllegiance",
+          "character": "Tyrion Lannister",
+          "to": "North Alliance"
+        },
+        {
+          "action": "changeAllegiance",
+          "character": "Gendry",
+          "to": "North Alliance"
+        },
+        {
+          "action": "log",
+          "message": "Tensions rise. Ravens fly from castle to castle..."
+        }
+      ]
+    },
+
+    {
+      "name": "Phase 3 – Sea Raiders Revolt",
+      "battle": {
+        "type": "allianceVsAlliance",
+        "allianceA": "Sea Raiders",
+        "allianceB": "Crown Alliance",
+        "rounds": 4,
+        "rules": {
+          "reviveDeadAsWights": true,
+          "logAllEvents": true,
+          "awardSurvivors": "Iron Fleet Token"
+        }
+      }
+    },
+
+    {
+      "name": "Phase 4 – White Walker Awakening",
+      "instructions": [
+        {
+          "action": "log",
+          "message": "Beyond the Wall, the Night King awakens. The Long Night begins."
+        },
+        {
+          "action": "spawnBoss",
+          "name": "Night King",
+          "type": "wight",
+          "health": 300,
+          "attack": 50
+        },
+        {
+          "action": "recruitWights",
+          "fromDead": true,
+          "minions": 20
+        },
+        {
+          "action": "assignSpecialAbility",
+          "character": "Night King",
+          "ability": "resurrectAll",
+          "cooldown": 2
+        },
+        {
+          "action": "log",
+          "message": "A storm of ice descends. The dead march south."
+        }
+      ]
+    },
+
+    {
+      "name": "Phase 5 – Betrayals",
+      "instructions": [
+        {
+          "action": "changeAllegiance",
+          "character": "Euron Greyjoy",
+          "to": "Others"
+        },
+        {
+          "action": "changeAllegiance",
+          "character": "Qyburn",
+          "to": "Others"
+        },
+        {
+          "action": "sabotageAlliance",
+          "alliance": "Crown Alliance",
+          "effect": "removeStrongest"
+        },
+        {
+          "action": "log",
+          "message": "Some seek power, even in death. Others fall by fear or fire."
+        }
+      ]
+    },
+
+    {
+      "name": "Phase 6 – All Out War",
+      "battle": {
+        "type": "multiAllianceBattle",
+        "participants": [
+          "North Alliance",
+          "Crown Alliance",
+          "Sea Raiders"
+        ],
+        "against": "Others",
+        "rules": {
+          "reviveDeadAsWights": true,
+          "deathEffect": "banishIfRevivedTwice",
+          "maxRounds": 10,
+          "areaDamageChance": 0.15
+        }
+      }
+    },
+
+    {
+      "name": "Phase 7 – Hero Ascension",
+      "instructions": [
+        {
+          "action": "log",
+          "message": "Legends are forged in darkness. Some rise above the rest."
+        },
+        {
+          "action": "promoteToHero",
+          "character": "Jon Snow",
+          "effects": {
+            "boostHealth": 100,
+            "boostAttack": 30,
+            "uniqueSkill": "leadCharge"
+          }
+        },
+        {
+          "action": "promoteToHero",
+          "character": "Daenerys Targaryen",
+          "effects": {
+            "summonDragon": true,
+            "dragonAttack": 60,
+            "duration": 2
+          }
+        },
+        {
+          "action": "assignBuff",
+          "alliance": "North Alliance",
+          "stat": "morale",
+          "increase": 15
+        },
+        {
+          "action": "celebrate",
+          "alliance": "North Alliance",
+          "message": "Songs are sung in the North. Hope stirs in weary hearts."
+        }
+      ]
+    },
+
+    {
+      "name": "Phase 8 – Final Showdown",
+      "battle": {
+        "type": "bossFight",
+        "boss": "Night King",
+        "heroes": ["Jon Snow", "Daenerys Targaryen"],
+        "rules": {
+          "bossCanResurrect": true,
+          "killBossEndsWar": true,
+          "heroesCanOnlyDieAfterRound": 3
+        }
+      }
+    },
+
+    {
+      "name": "Phase 9 – Aftermath & Titles",
+      "instructions": [
+        {
+          "condition": "character.isAlive == true",
+          "action": "awardTitle",
+          "title": "Defender of the Realms"
+        },
+        {
+          "condition": "character.house == 'Stark' && character.isAlive == true",
+          "action": "awardTitle",
+          "title": "Warden of the North"
+        },
+        {
+          "condition": "character.type == 'wight'",
+          "action": "banishToFrozenWaste"
+        },
+        {
+          "condition": "character.kills > 5",
+          "action": "awardTitle",
+          "title": "Slayer of the Dead"
+        },
+        {
+          "condition": "character.kills == 0 && character.isAlive == true",
+          "action": "awardTitle",
+          "title": "The Untouched"
+        },
+        {
+          "condition": "character.house == 'Targaryen' && character.isAlive == true",
+          "action": "elevateHouse",
+          "to": "Ruling Dynasty"
+        },
+        {
+          "action": "mourn",
+          "message": "Many brave souls were lost. Let their names be remembered in Oldtown."
+        }
+      ]
+    },
+
+    {
+      "name": "Phase 10 – Epilogue",
+      "instructions": [
+        {
+          "action": "log",
+          "message": "The Long Night is over. But peace is fragile. The game of thrones never ends."
+        },
+        {
+          "action": "declareVictory",
+          "alliance": "North Alliance",
+          "message": "The North stands triumphant, tempered by fire and ice."
+        },
+        {
+          "action": "saveFinalState",
+          "to": "final-state.json"
+        },
+        {
+          "action": "exportStatistics",
+          "to": "battle-report.csv"
+        }
+      ]
+    }
+  ]
+}
